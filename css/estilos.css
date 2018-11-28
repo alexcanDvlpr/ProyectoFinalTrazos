@@ -1,0 +1,129 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url('../img/fondo.jpg') no-repeat center center fixed;
+	background-size: cover;
+
+}
+
+.contenedor {
+	width: 100%;
+	height: 95vh;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+	width: 100%;
+	background: #4C4646;
+	height: 45px;
+	padding: 5px 0px;
+}
+
+.hamburguersa {
+	width: 3%;
+	height: 45px;
+}
+
+.sidemenu {
+	position: absolute;
+	top: 0;
+	left: -900px;
+	width: 20%;
+	height: 85vh;
+	background-color: #FFFAFA;
+	border-right: 1px solid grey;
+	border-bottom: 1px solid grey;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+nav {
+	width: 100%;
+}
+
+.nav-item {
+	cursor: pointer;
+	padding: 15px 5px 15px 5px;
+	border-bottom: 1px solid grey;
+	width: 100%;
+	margin: 10px 0px;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+
+.active {
+	animation-name: appear;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+}
+
+
+@keyframes appear {
+	0% { left:-900px; }
+	100% { left: 0px; }
+}
+
+.contenido {
+	width: 100%;
+	/*display: flex;*/
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+.giphy-embed {
+	width: 45%;
+	margin: auto;
+	height: auto;
+	border-radius: 550px;
+}
+
+.contenido>h1, .contenido>h3 {
+	color: #fff;
+	letter-spacing: 2px;
+}
+
+
+.tareasContenedor {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.btnAddTarea {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	font-size: 1.5em;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.btn {
+	font-size: 1em;
+	border-radius: 15px;
+	padding: 15px;
+}
+
