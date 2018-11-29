@@ -22,13 +22,13 @@ body {
 header {
 	width: 100%;
 	background: #4C4646;
-	height: 45px;
+	height: 55px;
 	padding: 5px 0px;
 }
 
 .hamburguersa {
 	width: 3%;
-	height: 45px;
+	height: 55px;
 }
 
 .sidemenu {
@@ -100,9 +100,19 @@ nav {
 	width: 100%;
 	height: 100%;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 15px;
+}
+
+.contenedorTareaPorCategoria {
+	width: 20%;
+	height: 85vh;
+	background: rgba(216, 216, 216, .7);
+	padding: 15px;
+	margin: 15px;
+	border-radius: 3px;
 }
 
 .btnAddTarea {
@@ -127,3 +137,62 @@ nav {
 	padding: 15px;
 }
 
+.tareasTodo, .tareasInProgress, .tareasTerminadas {
+	width: 100%;
+	height: 93%;
+	/*overflow-y: scroll;*/
+}
+
+.tarea {
+	position: relative;
+	width: 100%;
+	border: 1px solid #444;
+	border-radius: 10px;
+	padding: 5px;
+	background: #FFFAFA;
+	cursor: pointer;
+	margin: 5px 0px;
+}
+
+.fas {
+	margin: 10x;
+	font-size: 18px;
+}
+
+.fa-highlighter:hover {
+	color: blue;
+}
+
+.fa-trash-alt:hover {
+	color: crimson;
+}
+
+.opciones {
+	width: 20px;
+	height: 100%;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+
+.prioridad {
+	width: 15px;
+	height: 15px;
+	border-radius: 50px;
+}
+
+.prio-low {
+	background: #28a745;
+}
+
+.prio-medium {
+	background: #ffc107;
+}
+
+.prio-hight {
+	background: #dc3545;
+}
+
+.activeDrag {
+	border: 2px solid blue;
+}

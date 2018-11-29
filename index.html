@@ -24,7 +24,40 @@
 	</header>
 
 	<div class="contenedor">
+
+		<div class="contenido">
+			<img src="img/ralph.gif" class="giphy-embed">
+			<h1>Proyecto Final Curso Javascript, JQuery y Angular 2</h1>
+			<h3>Alex Cantón García</h3>
+		</div>
 		
+		<div class="tareasContenedor">
+			
+			<div class="contenedorTareaPorCategoria" id="todo">
+				<h5>Por Hacer</h5>
+				<hr>
+				<div class="tareasTodo">
+				</div>
+			</div>
+			<div class="contenedorTareaPorCategoria" id="inprogress">
+				<h5>En Proceso</h5>
+				<hr>
+				<div class="tareasInProgress">
+				</div>
+			</div>
+			<div class="contenedorTareaPorCategoria" id="finish">
+				<h5>Terminadas</h5>
+				<hr>
+				<div class="tareasTerminadas">
+				</div>
+			</div>
+
+			<div class="btnAddTarea">
+				<i class="fas fa-plus"></i>
+			</div>
+		</div>
+		
+
 		<div class="sidemenu">
 			<nav>
 				<div class="nav-item">
@@ -35,24 +68,6 @@
 				</div>
 			</nav>
 		</div>
-
-		<div class="contenido">
-			<img src="img/ralph.gif" class="giphy-embed">
-			<h1>Proyecto Final Curso Javascript, JQuery y Angular 2</h1>
-			<h3>Alex Cantón García</h3>
-		</div>
-		
-		<div class="tareasContenedor">
-			
-
-
-			<div class="btnAddTarea">
-				<i class="fas fa-plus"></i>
-			</div>
-		</div>
-		
-
-
 
 	</div>
 	
@@ -77,9 +92,9 @@
 	      	<label for="prioridadIn">Prioridad:</label>
 	      	<select name="prioridad" id="prioridadIn">
 	      		<option value="">Elige Prioridad</option>
-	      		<option value="baja">Baja</option>
-	      		<option value="media">Media</option>
-	      		<option value="alta">Alta</option>
+	      		<option value="low">Baja</option>
+	      		<option value="medium">Media</option>
+	      		<option value="hight">Alta</option>
 	      	</select>
 	    </div>
 		
@@ -93,14 +108,14 @@
 			</div>
 			<div class="hoursestimated">
 				<label for="horaEstimadaIn">Horas Estimadas:</label>
-				<input type="number" id="horaEstimadaIn">
+				<input type="number" min="1" id="horaEstimadaIn">
 			</div>
-			<div class="progreso">
+			<!-- <div class="progreso">
 				<label for="barra">Progreso:</label>
 				<div class="nivelProgreso">
 					<div class="relleno"></div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 	    <div class="form-group form-group-submited">
@@ -118,9 +133,11 @@
 
 
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh5IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="js/Tarea.js"></script>
+	<script src="js/modalNmenu.js"></script>
 	<script src="js/funcion.js"></script>
 </body>
 </html>
