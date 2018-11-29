@@ -15,6 +15,7 @@ $(function(){
 	$('.close').on({
 		click: function() {
 			$('.modalAddTarea').hide();
+			$('.modalEditTarea').hide();
 		}
 	});
 
@@ -42,6 +43,48 @@ $(function(){
 			}
 		}
 	});
+
+
+	$('.btnEdit').on({
+
+		click: function() {
+
+			$('.btnEdit').attr('disabled', true);
+			$('.btnSaveChangesEdit').attr('disabled', false );
+			$('#TareaNameShow').attr('disabled', false);
+			$('#dateShow').attr('disabled', false);
+			$('#descEdit').attr('disabled', false);
+			$('#toDoHoursShow').attr('disabled', false);
+		}
+
+	});
+
+	$('.btnSaveChangesEdit').on({
+
+		click: function() {
+
+			var nombre = $('#TareaNameShow').val();
+			var fecha = $('#dateShow').val();
+			var desc = $('#descEdit').val();
+			var horas = $('#horaEstimadaShow').val();
+			var horasFin = $('#toDoHoursShow').val();
+
+		}
+
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

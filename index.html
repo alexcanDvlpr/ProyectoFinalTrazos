@@ -72,7 +72,7 @@
 	</div>
 	
 
-	<div id="myModal" class="modalAddTarea">
+	<div id="myModal" class="modal modalAddTarea">
 
 	  <!-- Modal content -->
 	  <div class="modal-content">
@@ -120,6 +120,57 @@
 
 	    <div class="form-group form-group-submited">
 	      	<button class="btn btnSaveAdd"><i class="fas fa-save"></i> Guardar</button>
+	    </div>
+	    </div>
+	    <div class="modal-footer">
+	    </div>
+	  </div>
+
+	</div>
+
+
+	<div id="myModal" class="modal modalEditTarea">
+
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	    	<h2>Tarea</h2>
+	      <span class="close">&times;</span>
+	    </div>
+	    <div class="modal-body">
+	      <div class="form-group">
+	      	<input type="text" disabled id="TareaNameShow">
+	      </div>
+	    <div class="form-group">
+	    	<label for="dateIn">Fecha Vencimiento:</label>
+			<input type="text" id="dateShow" disabled>
+	    </div>
+	    <div class="form-group">
+	    	<label for="descEdit">Descripción:</label><br>
+			<textarea id="descEdit" disabled cols="30" rows="10"></textarea>
+	    </div>
+	    
+		
+		<div class="form-group row">
+			<div class="hoursestimated">
+				<label for="horaEstimadaIn">Horas Estimadas:</label>
+				<input type="number" disabled min="1" id="horaEstimadaShow">
+			</div>
+			<div class="hoursFinisih">
+				<label for="toDoHoursShow">Horas realizadas:</label>
+				<input type="number" disabled min="1" id="toDoHoursShow">
+			</div>
+			<div class="progreso">
+				<label for="barra">Progreso:</label>
+				<div class="nivelProgreso">
+					<div class="relleno"></div>
+				</div>
+			</div>
+		</div>
+
+	    <div class="form-group form-group-submited">
+	      	<button class="btn btnEdit"><i class="fas fa-highlighter"></i> Editar</button>
+	      	<button class="btn btnSaveChangesEdit" disabled><i class="fas fa-save"></i> Guardar Cambios</button>
 	    </div>
 	    </div>
 	    <div class="modal-footer">

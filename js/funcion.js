@@ -1,6 +1,7 @@
 $(function() {
 
 	var tareasCreadas = JSON.parse(localStorage.getItem('tareas'));
+	var tareaShow = {};
 
 	if(!tareasCreadas) {
 		tareasCreadas = [];
@@ -28,18 +29,48 @@ $(function() {
 
 		if(tarea) {
 			
-			$('.tareasTodo').append('<div class="tarea"><div class="opciones"><div class="prioridad prio-'+tarea.priority+'"></div><div class="edit"><i class="fas fa-highlighter">'+
-			'</i></div><div class="delete"><i class="fas fa-trash-alt"></i></div></div><h2>'+tarea.name+'</h2><b>Expira: <span>'+tarea.getSpanishDate()+'</span></b></div>');
+			/**
+			 *
+			 *	Habra que poner aqui un Switch para filtrar por status (todo,
+			 *  inprog, finisih) para que pinte en un contenedor u otro
+			 *
+			 */
+
+			$('.tareasTodo').append('<div class="tarea"><div class="opciones"><div class="prioridad prio-'+tarea.priority+'"></div><div class="delete"><i class="fas fa-trash-alt"></i></div></div><h2>'+tarea.name+'</h2><b>Expira: <span>'+tarea.getSpanishDate()+'</span></b></div>');
+
+			$('.tarea').on({
+				dblclick: function() {
+					tareaShow = {};
+					let index = -1;
+
+					for(let tarea of tareasCreadas) {
+						if (tarea.name === $(this)[0].childNodes[1].textContent) {
+							index = tareasCreadas.indexOf(tarea);
+						}
+					}
+					tareaShow = tareasCreadas[index];
+					let tarea = new Tarea(tareaShow.name, tareaShow.date, tareaShow.priority, tareaShow.user, tareaShow.hoursEstimated);
+					tarea.status = tareaShow.status;
+					tarea.hoursFinish = tareaShow.hoursFinish;
+					tarea.desc = tareaShow.desc;
+					cargarModal(tarea);
+					$('.modalEditTarea').show();
+				}
+			});
 
 			$('.fa-trash-alt').on({
 				click: function() {
-					console.log('delete');
-				}
-			});
-		
-			$('.fa-highlighter').on({
-				click: function() {
-					console.log('Edit');
+					// console.log(tareasCreadas);
+					// let index = -1;
+
+					// for(let tarea of tareasCreadas) {
+					// 	if (tarea.name === $(this)[0].childNodes[1].textContent) {
+					// 		index = tareasCreadas.indexOf(tarea);
+					// 	}
+					// }
+					// tareasCreadas.splice(index, 1);
+					// console.log(tareasCreadas);
+					// localStorage.setItem('tareas', JSON.stringify(tareasCreadas));
 				}
 			});
 
@@ -71,6 +102,15 @@ $(function() {
 
 		let tarea = new Tarea(nombreTarea, fechaFin, prioridad, usuario, horasEstimadas);
 		return tarea;
+	}
+
+	function cargarModal(tareaShow) {
+		$('#TareaNameShow').val(tareaShow.name);
+		$('#dateShow').val(tareaShow.date);
+		$('#descEdit').val(tareaShow.desc);
+		$('#horaEstimadaShow').val(tareaShow.hoursEstimated);
+		$('#toDoHoursShow').val(tareaShow.hoursFinish);
+		$('.relleno').css({ 'width': tareaShow.getProgress()+'%' });
 	}
 
 	$('.tareasInProgress').droppable({
